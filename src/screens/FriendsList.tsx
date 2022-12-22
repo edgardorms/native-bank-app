@@ -1,6 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
-import { Friend } from "../types/models";
+import { View, Text, StyleSheet } from "react-native";
 
 const friends = [
   {

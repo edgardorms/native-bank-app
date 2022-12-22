@@ -1,6 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
-import { User } from "../types/models";
+import { View, Text, StyleSheet } from "react-native";
 
 const user = {
   name: "John Doe",

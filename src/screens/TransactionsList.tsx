@@ -1,6 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
-import { Transaction } from "../types/models";
+import { View, Text, StyleSheet } from "react-native";
 
 const transactions = [
   {
@@ -34,12 +33,12 @@ const TransactionsList = () => {
           )}
           {transaction.fromAccount && (
             <Text style={styles.transactionAccount}>
-              De: {transaction.fromAccount}
+              From: {transaction.fromAccount}
             </Text>
           )}
           {transaction.toAccount && (
             <Text style={styles.transactionAccount}>
-              A: {transaction.toAccount}
+              To: {transaction.toAccount}
             </Text>
           )}
         </View>
