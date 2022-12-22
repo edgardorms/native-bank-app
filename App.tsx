@@ -6,7 +6,7 @@ import BankOverview from "./src/screens/BankOverview";
 import FriendsList from "./src/screens/FriendsList";
 import TransactionsList from "./src/screens/TransactionsList";
 import { RootStackParamList } from "./src/types/models";
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
 const Stack = createMaterialBottomTabNavigator<RootStackParamList>();
 

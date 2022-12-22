@@ -1,5 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import Header from "../components/HeaderBankOverview";
+import AccountList from "../components/AccountList";
 
 const user = {
   name: "John Doe",
@@ -19,15 +21,8 @@ const user = {
 const BankOverview = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to AppBank</Text>
-      <Text style={styles.subtitle}>Name: {user.name}</Text>
-      <Text style={styles.subtitle}>Email: {user.email}</Text>
-      {user.accounts.map((account) => (
-        <View style={styles.accountContainer} key={account.type}>
-          <Text style={styles.accountType}>{account.type}:</Text>
-          <Text style={styles.accountBalance}>{account.balance}</Text>
-        </View>
-      ))}
+      <Header name={user.name} email={user.email} />
+      <AccountList accounts={user.accounts} />
     </View>
   );
 };
