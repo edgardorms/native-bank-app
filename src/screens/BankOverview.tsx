@@ -2,31 +2,36 @@ import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 import { User } from "../types/models";
 
-const BankOverviewScreen = (props: {
-  screenProps: { user: User },
-  navigation: any,
-}) => {
+const user = {
+  name: "John Doe",
+  email: "johndoe@gmail.com",
+  accounts: [
+    {
+      type: "checking",
+      balance: 1000.5,
+    },
+    {
+      type: "savings",
+      balance: 2500.0,
+    },
+  ],
+};
+
+const BankOverview = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Vista general bancaria</Text>
-      <Text style={styles.subtitle}>Nombre: {props.screenProps.user.name}</Text>
-      <Text style={styles.subtitle}>
-        Correo electrónico: {props.screenProps.user.email}
-      </Text>
-      {props.screenProps.user.accounts.map((account) => (
+      <Text style={styles.title}>Welcome to AppBank</Text>
+      <Text style={styles.subtitle}>Name: {user.name}</Text>
+      <Text style={styles.subtitle}>Email: {user.email}</Text>
+      {user.accounts.map((account) => (
         <View style={styles.accountContainer} key={account.type}>
           <Text style={styles.accountType}>{account.type}:</Text>
           <Text style={styles.accountBalance}>{account.balance}</Text>
         </View>
       ))}
-      <Button
-        title="Ver transacciones"
-        onPress={() => props.navigation.navigate('Transactions')}
-      />
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {
@@ -57,4 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BankOverviewScreen;
+export default BankOverview;

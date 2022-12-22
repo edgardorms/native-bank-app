@@ -1,3 +1,5 @@
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+
 export interface User {
   name: string;
   email: string;
@@ -21,3 +23,9 @@ export interface Friend {
   name: string;
   email: string;
 }
+
+export type RootStackParamList = {
+  Home: User;
+  Transactions: Transaction[];
+  Friends: Friend[];
+};

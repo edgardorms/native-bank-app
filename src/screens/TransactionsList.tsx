@@ -2,11 +2,30 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Transaction } from "../types/models";
 
-const TransactionsList = (props: { transactions: Transaction[] }) => {
+const transactions = [
+  {
+    type: "deposit",
+    amount: 500.0,
+    account: "checking",
+  },
+  {
+    type: "withdrawal",
+    amount: 100.0,
+    account: "savings",
+  },
+  {
+    type: "transfer",
+    amount: 200.0,
+    fromAccount: "checking",
+    toAccount: "savings",
+  },
+];
+
+const TransactionsList = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Lista de transacciones</Text>
-      {props.transactions.map((transaction) => (
+      <Text style={styles.title}>Transactions List</Text>
+      {transactions.map((transaction) => (
         <View style={styles.transactionContainer} key={transaction.type}>
           <Text style={styles.transactionType}>{transaction.type}:</Text>
           <Text style={styles.transactionAmount}>{transaction.amount}</Text>
