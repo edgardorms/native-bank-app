@@ -5,8 +5,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import BankOverview from "./src/screens/BankOverview";
 import FriendsList from "./src/screens/FriendsList";
 import TransactionsList from "./src/screens/TransactionsList";
-import { RootStackParamList } from "./src/types/models";
+import { User, Transaction, Friend } from "./src/types/models";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+
+type RootStackParamList = {
+  Home: User;
+  Transactions: Transaction[];
+  Friends: Friend[];
+};
 
 const Stack = createMaterialBottomTabNavigator<RootStackParamList>();
 

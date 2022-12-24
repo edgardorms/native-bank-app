@@ -22,8 +22,3 @@ export interface Friend {
   email: string;
 }
 
-export type RootStackParamList = {
-  Home: User;
-  Transactions: Transaction[];
-  Friends: Friend[];
-};
